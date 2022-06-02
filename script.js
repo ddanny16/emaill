@@ -1,40 +1,27 @@
-function checkPassword() {
-  let password = document.getElementById("password").value;
-  let cnfrmPassword = document.getElementById("cnfrm-password").value;
-  console.log(password, cnfrmPassword);
-  let message = document.querySelector("#message");
-
-  if (password.length != 0) {
-    if (password == cnfrmPassword) {
-      message.textContent = "Passwords match";
-      message.style.backgroundColor = "green";
-      message.style.borderRadius = "10px";
-      let location = "/index2.html";
+function validation() {
+  var form = document.querySelector("#form");
+  var email = document.querySelector("#email").value;
+  var text = document.querySelector("#text");
+  var pattern = /\S+@\S+\.\S+/;
+  if (email.length != 0) {
+    if (pattern.test(email)) {
+      form.classList.add("valid");
+      form.classList.remove("invalid");
+      text.innerHTML = "Email address is valid";
+      text.style.color = "#00ff00";
+      let location = "/both.html";
 
       window.location.assign(location);
       
-    } else if (cnfrmPassword == "") {
-      message.textContent = "confirm Password cant be empty";
-      message.style.backgroundColor = "yellow";
-    }
-
-    // else if(cnfrmPassword==""){
-    //   message.textContent = "Password1 cant be empty";
-    //   message.style.backgroundColor ="brown"
-    // }
-    else {
-      message.textContent = "Password don't match";
-
-      message.style.backgroundColor = "red";
-      message.style.borderRadius = "10px";
+    } else {
+      form.classList.remove("valid");
+      form.classList.add("invalid");
+      text.innerHTML = "Email address is invalid";
+      text.style.color = "#ff0000";
     }
   } else {
-    //   alert('password cant be empty')
-    //   message.textContent = ""
-
-    message.textContent = "password cant be empty";
-
-    message.style.backgroundColor = "blue";
-    message.style.borderRadius = "10px";
+    text.innerHTML = "Email address is empty";
+    text.style.color = "#f0000f";
+    text.style.fontWeight = "700";
   }
 }

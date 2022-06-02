@@ -4,33 +4,27 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>EMAIL VALIDATION</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <form action="">
-            <h3>CREATE A PASSWORD</h3>
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" placeholder="enter email address">
-            <label for="password">Password</label>
-            <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder=" enter your new password"
-                required
-            />
-            <label for="cnfrm-password">Confirm Password</label>
-            <input
-                type="password"
-                name="cnfrm-password"
-                id="cnfrm-password"
-                placeholder="confirm new password"
-                required
-            />
-            <p id="message"></p>
-            <input type="button" onclick="checkPassword()" value="CONFIRM">
-        </form>
+        <div id="template">
+            <h3>Email Address</h3>
+            <form id="form" action="#">
+                <div class="inputbox">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="enter email address"
+                        onkeydown="validation()"
+                    >
+                    <p id="text"></p>
+                    <input type="button" onclick="validation()" value="CONFIRM">
+                </div>
+            </form>
+        </div>
         <script src="script.js" async defer></script>
     </body>
 </html>

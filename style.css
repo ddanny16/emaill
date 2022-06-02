@@ -1,81 +1,88 @@
 *{
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+    padding: 0;
 }
 body{
-    height: 100vh;
-    background-image: linear-gradient(to bottom right, #101030, #444 );
-    background-repeat: no-repeat;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #777 ;
 }
-form{
-    background-color: white;
+/* #template{
+    background-color:#fff;
     width: 40%;
     padding: 50px 40px;
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 15px;
-    box-shadow: 20px 20px 30px rgba(0,0,0,0,0.15);
-    /* max-width: 900px; */
+    margin-left: auto;
+    margin-right: auto;
+
+}
+h3 #form{
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 50px;
-
-}
-label{
-    font-weight: 500;
-    color: #101030;
-}
-input{
-    display: block;
-    width: 100%;
-    margin-top: 5px;
-    padding: 12px;
-    border-radius: 6px;
-    outline: none;
-    color: #101010;
-}
-
-h3{
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-bottom: 40px;
-   
+} */
+h3{
+    position: relative;
+   font-size: 20px;
+   font-weight: 900;
+   color: black;
+   letter-spacing: 1px;
+   margin-bottom: 5px;
+
+
 }
-input[type="password"]{
-    border: 2px solid palegreen;
-    background-color: #c2c2c2;
+#form{
+    position: relative;
+    
+}
+#form #email{
+    width: 300px;
+    background-color: #292929;
+outline: none;
+border: none;
+padding: 10px;
+border-radius: 10px;
+font-size: 18px;
+color: #fff;
+}
+#form .inputbox{
+    position: relative;
+
 }
 input[type="button"]{
- background-color: #777;
- font-weight: 500;
- color: white;
- border: none;
- font-size: 18px;
- letter-spacing: 1px;
- cursor: pointer;
- margin-top: 20px;
+    background-color: #101030;
+    font-weight: 500;
+    color: white;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+   
+   }
+#text{
+    display: block;
+    color: #000;
+    font-weight: 300;
+    font-style: italic;
+    padding:5px ;
 
 }
-input[type="button"]:hover{
-    transform: scaleX(1.1);
-    background-color: #444;
-}
-input[type="email"]{
-    background-color: #c2c2c2c2;
-    border: #101030 1px solid;
-}
-p{
-    display: inline-block;
-    color: rgb(255, 255, 255);
-    margin: 15px 0;
-    padding: 5px 20px;
-    color: #fff;
-
+#form .invalid .inputbox:before{
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 5px;
+    width: 24px;
+    height: 24px;
+    background: url(images/circle-xmark-solid.svg);
+    background-size: cover;
+    z-index: 1000;
 }
